@@ -56,17 +56,47 @@
 		</plugins>
 	</build>
  
- <distributionManagement>
-        <repository>
-            <id>My release</id>
-            <name>first_artifect-libs-release-local</name>
-            <url>http://localhost:8082/artifactory/first_artifect-libs-release-local/</url>
-        </repository>
-        <snapshotRepository>
-            <id>My snapshot</id>
-            <name>first_artifect-libs-snapshot-local</name>
-            <url>http://localhost:8082/artifactory/first_artifect-libs-snapshot-local/</url>
-        </snapshotRepository>
-    </distributionManagement>
+
     
+    <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>first_artifect-libs-release</name>
+          <url>http://localhost:8081/artifactory/first_artifect-libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>first_artifect-libs-snapshot</name>
+          <url>http://localhost:8081/artifactory/first_artifect-libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>first_artifect-libs-release</name>
+          <url>http://localhost:8081/artifactory/first_artifect-libs-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>first_artifect-libs-snapshot</name>
+          <url>http://localhost:8081/artifactory/first_artifect-libs-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+  
 </project>
