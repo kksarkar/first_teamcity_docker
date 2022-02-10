@@ -56,4 +56,17 @@
 		</plugins>
 	</build>
  
+ <distributionManagement>
+        <repository>
+            <id>My release</id>
+            <name>first_artifect-libs-release-local</name>
+            <url>http://localhost:8082/artifactory/first_artifect-libs-release-local/</url>
+        </repository>
+        <snapshotRepository>
+            <id>My snapshot</id>
+            <name>first_artifect-libs-snapshot-local</name>
+            <url>http://localhost:8082/artifactory/first_artifect-libs-snapshot-local/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
 </project>
