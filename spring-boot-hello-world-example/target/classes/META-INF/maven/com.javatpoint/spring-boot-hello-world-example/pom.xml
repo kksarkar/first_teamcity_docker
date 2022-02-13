@@ -60,7 +60,7 @@
     <repository>
         <id>central</id>
         <name>DESKTOP-7AG5K9C-releases</name>
-        <url>http://localhost:8081/artifactory/first_artifect-libs-release</url>
+        <url>http://localhost:8082/artifactory/first_artifect-libs-release</url>
     </repository>
 </distributionManagement>
     
